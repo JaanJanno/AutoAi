@@ -1,4 +1,4 @@
-AutoAi
+Nonomino
 ======
 
 Tehisintellekti aine teine kodutöö
