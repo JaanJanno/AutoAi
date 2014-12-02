@@ -1,4 +1,4 @@
-package ee.ut.autoai.ui;
+package ee.ut.sudoku.ui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
