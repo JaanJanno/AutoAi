@@ -19,14 +19,14 @@ public class MenuBar extends JMenuBar {
 	private static final long serialVersionUID = 2281560688466949272L;
 
 	public MenuBar(final MainWindow window) {
-		
+
 		/*
 		 * Defineerib menüüriba valikud.
 		 */
-		
+
 		JMenu fileMenu = new JMenu("File");
 		add(fileMenu);
-		
+
 		/*
 		 * Seostab valikutega alamvalikud..
 		 */
@@ -35,18 +35,18 @@ public class MenuBar extends JMenuBar {
 		JMenuItem loadAction = new JMenuItem("Lae uus kaart");
 		JMenuItem exitAction = new JMenuItem("Välju mängust");
 
-
 		fileMenu.add(newAction);
 		fileMenu.add(loadAction);
 		fileMenu.addSeparator();
 		fileMenu.add(exitAction);
-		
+
 		exitAction.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				window.dispose();
 			}
 		});
 	}
+
 }

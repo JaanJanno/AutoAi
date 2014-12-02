@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 public class MainWindow extends JFrame {
-	
+
 	MainView view = new MainView();
 
 	private static final long serialVersionUID = -7017970115572844571L;
@@ -13,7 +13,6 @@ public class MainWindow extends JFrame {
 		super("Sudoku");
 		initWindow();
 	}
-	
 
 	public void initWindow() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -13,14 +13,14 @@ public class Field {
 
 	public Field(List<List<FieldSlot>> field) {
 		this.field = field;
-		for (int i = 0 ; i < 9 ; i ++) {
+		for (int i = 0; i < 9; i++) {
 			areas.add(new ArrayList<FieldSlot>());
 		}
 	}
-	
+
 	public void flushAreas() {
 		areas = new ArrayList<List<FieldSlot>>();
-		for (int i = 0 ; i < 9 ; i ++) {
+		for (int i = 0; i < 9; i++) {
 			areas.add(new ArrayList<FieldSlot>());
 		}
 	}
@@ -29,7 +29,7 @@ public class Field {
 		this.width = width;
 		this.height = height;
 		this.field = initField(width, height);
-		for (int i = 0 ; i < 9 ; i ++) {
+		for (int i = 0; i < 9; i++) {
 			areas.add(new ArrayList<FieldSlot>());
 		}
 	}
@@ -62,7 +62,7 @@ public class Field {
 		return field;
 	}
 
-	public void initAreas() {		
+	public void initAreas() {
 		setArea(0, 0, 0);
 		setArea(3, 0, 1);
 		setArea(6, 0, 2);
@@ -73,19 +73,19 @@ public class Field {
 		setArea(3, 6, 7);
 		setArea(6, 6, 8);
 	}
-	
+
 	private void setArea(int x, int y, int id) {
-		for (int i = x ; i < x + 3 ; i ++) {
-			for (int j = y ; j < y + 3 ; j ++) {
+		for (int i = x; i < x + 3; i++) {
+			for (int j = y; j < y + 3; j++) {
 				areas.get(id).add(getSlot(i, j));
 			}
 		}
 	}
-	
+
 	public List<FieldSlot> fillNext(int area, Stack<Integer> values) {
 		List<FieldSlot> ret = new ArrayList<FieldSlot>();
 		for (FieldSlot s : areas.get(area)) {
-			if (s.getValue() == 0){
+			if (s.getValue() == 0) {
 				s.setValue(values.pop());
 				ret.add(s);
 			}

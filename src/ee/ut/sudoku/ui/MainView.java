@@ -28,13 +28,10 @@ public class MainView extends JPanel implements MouseListener {
 		addMouseListener(this); // Seob hiire sisendi.
 		field.setSlot(1, 3, 4);
 		field.initAreas();
+
 		Parser.parseField(field, Parser.test2);
 		Parser.parseRegions(field, Parser.testRegions);
-		
-		System.out.println(Solver.solve(field));
 		Solver.solve(field);
-		Solver.solve(field);
-		System.out.println(Solver.solve(field));
 	}
 
 	@Override
@@ -65,16 +62,18 @@ public class MainView extends JPanel implements MouseListener {
 	 */
 
 	private void drawGrid(Graphics2D g) {
-		for (int i = 0 ; i < 9 ; i  ++) {
+		for (int i = 0; i < 9; i++) {
 			for (FieldSlot s : field.areas.get(i)) {
 				int x = s.getX();
 				int y = s.getY();
-				g.setColor(new Color((200 + 25 * i) % 255, (120 * i) % 255, 90 * i % 255));
-				g.fillRect(x * width / 9, y * height / 9, width / 9 + 1, height / 9 + 1);
+				g.setColor(new Color((200 + 25 * i) % 255, (120 * i) % 255,
+						90 * i % 255));
+				g.fillRect(x * width / 9, y * height / 9, width / 9 + 1,
+						height / 9 + 1);
 				g.setColor(Color.BLACK);
 			}
 		}
-			
+
 		for (int x = 0; x < 9; x++) {
 			for (int y = 0; y < 9; y++) {
 				int xPos = (int) ((float) width / 9 * (x) + (float) width / 32);
