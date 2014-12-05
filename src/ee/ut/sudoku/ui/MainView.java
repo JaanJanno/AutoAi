@@ -6,15 +6,21 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+
 import javax.swing.JPanel;
+
 import ee.ut.sudoku.game.Field;
 import ee.ut.sudoku.game.FieldSlot;
 import ee.ut.sudoku.game.Parser;
-import ee.ut.sudoku.game.Solver;
 
-public class MainView extends JPanel implements MouseListener {
+/**
+ * Mängu vaade, mis sisaldab joonistatud ruute ja numberid.
+ * 
+ * @author jaan
+ *
+ */
+
+public class MainView extends JPanel {
 
 	private static final long serialVersionUID = 4056960530231784348L;
 
@@ -25,13 +31,8 @@ public class MainView extends JPanel implements MouseListener {
 
 	public MainView() {
 		super(true); // Enabled double buffering
-		addMouseListener(this); // Seob hiire sisendi.
-		field.setSlot(1, 3, 4);
 		field.initAreas();
-
-		Parser.parseField(field, Parser.test2);
-		Parser.parseRegions(field, Parser.testRegions);
-		Solver.solve(field);
+		Parser.parseField(field, Parser.test);
 	}
 
 	@Override
@@ -89,34 +90,4 @@ public class MainView extends JPanel implements MouseListener {
 		}
 	}
 
-	/**
-	 * Kuulab sisendit hiirelt ning annab selle edasi mängu loogikat
-	 * kontrollivale klassile.
-	 */
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		System.out.println("Press{" + e.getX() + ", " + e.getY() + "}");
-		repaint();
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		return;
-	}
-
-	@Override
-	public void mouseClicked(MouseEvent e) {
-		return;
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		return;
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		return;
-	}
 }

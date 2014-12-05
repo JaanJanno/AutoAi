@@ -1,15 +1,20 @@
 package ee.ut.sudoku.game;
 
+/**
+ * Klass ühe ruudukese info hoidmiseks.
+ * 
+ * @author jaan
+ *
+ */
+
 public class FieldSlot {
 
-	private boolean isRoad;
 	private int value = 0;
 
 	int x;
 	int y;
 
 	public FieldSlot(int x, int y) {
-		isRoad = false;
 		this.x = x;
 		this.y = y;
 	}
@@ -36,18 +41,6 @@ public class FieldSlot {
 
 	public void setValue(int value) {
 		this.value = value;
-	}
-
-	public FieldSlot(boolean isRoad) {
-		this.isRoad = isRoad;
-	}
-
-	public boolean isRoad() {
-		return isRoad;
-	}
-
-	public void setRoad(boolean isRoad) {
-		this.isRoad = isRoad;
 	}
 
 	@Override

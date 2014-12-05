@@ -4,6 +4,13 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
+/**
+ * Arvutab sisendiks antud elementide võimalikke permutatsioone.
+ * 
+ * @author jaan
+ *
+ */
+
 public class Permutation {
 
 	Stack<Stack<Integer>> permutations = new Stack<Stack<Integer>>();
@@ -21,6 +28,12 @@ public class Permutation {
 			freeElems.push(usable);
 		}
 	}
+
+	/**
+	 * Arvutab järgmise permutatsiooni.
+	 * 
+	 * @return
+	 */
 
 	@SuppressWarnings("unchecked")
 	public Stack<Integer> getNext() {

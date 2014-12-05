@@ -3,6 +3,13 @@ package ee.ut.sudoku.game;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Klass sisendiks antud failist saadud stringi tabeli sisuks parsimiseks.
+ * 
+ * @author jaan
+ *
+ */
+
 public class Parser {
 
 	public static String test = "5 3 - - 7 - - - -\n" + "6 - - 1 9 5 - - -\n"
@@ -10,6 +17,12 @@ public class Parser {
 			+ "4 - - 8 - 3 - - 1\n" + "7 - - - 2 - - - 6\n"
 			+ "- 6 - - - - 2 8 -\n" + "- - - 4 1 9 - - 5\n"
 			+ "- - - - 8 - - 7 9\n";
+
+	public static String clr = "1 2 3 4 5 6 7 8 9\n" + "2 3 4 5 6 7 8 9 1\n"
+			+ "3 4 5 6 7 8 9 1 2\n" + "4 5 6 7 8 9 1 2 3\n"
+			+ "5 6 7 8 9 1 2 3 4\n" + "6 7 8 9 1 2 3 4 5\n"
+			+ "7 8 9 1 2 3 4 5 6\n" + "8 9 1 2 3 4 5 6 7\n"
+			+ "9 1 2 3 4 5 6 7 8\n";
 
 	public static String testRegions = "1 1 1 2 3 3 3 3 3\n"
 			+ "1 1 1 2 2 2 3 3 3\n" + "1 4 4 4 4 2 2 2 3\n"
@@ -23,6 +36,13 @@ public class Parser {
 			+ "- 8 - 3 - 4 - 6 -\n" + "- - 4 - 1 - 9 - -\n"
 			+ "5 - - - - - - - 7\n";
 
+	/**
+	 * Parsib sisendiks antud ruudustikele määratavate numbrite info.
+	 * 
+	 * @param f
+	 * @param s
+	 */
+
 	public static void parseField(Field f, String s) {
 		List<List<Integer>> table = getIntList(s);
 		for (int x = 0; x < 9; x++) {
@@ -31,6 +51,13 @@ public class Parser {
 			}
 		}
 	}
+
+	/**
+	 * Parsib sisendiks andtud ruudustiku jaotuse info.
+	 * 
+	 * @param f
+	 * @param s
+	 */
 
 	public static void parseRegions(Field f, String s) {
 		List<List<Integer>> table = getIntList(s);
@@ -42,6 +69,14 @@ public class Parser {
 			}
 		}
 	}
+
+	/**
+	 * Tagastab listide listi, milles iga sisemine list tähistab ühte parsitud
+	 * rida.
+	 * 
+	 * @param s
+	 * @return
+	 */
 
 	private static List<List<Integer>> getIntList(String s) {
 		List<List<Integer>> table = new ArrayList<List<Integer>>();

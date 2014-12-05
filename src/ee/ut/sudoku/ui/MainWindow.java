@@ -3,6 +3,13 @@ package ee.ut.sudoku.ui;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 
+/**
+ * Programmi põhiakna klass.
+ * 
+ * @author jaan
+ *
+ */
+
 public class MainWindow extends JFrame {
 
 	MainView view = new MainView();
